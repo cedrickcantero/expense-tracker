@@ -1,0 +1,112 @@
+/* src/styles/main.scss */
+@import 'variables';
+
+body {
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  max-width: 600px;
+  margin: auto;
+  padding: $spacing-unit;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit * 2;
+}
+
+h1 {
+  text-align: center;
+  color: $primary-color;
+}
+
+.expense-form {
+  background-color: $card-background;
+  padding: $spacing-unit;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit;
+
+  input, button {
+    padding: $spacing-unit;
+    font-size: 1rem;
+    border-radius: $border-radius;
+    border: 1px solid #ddd;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-unit;
+}
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: $spacing-unit;
+    border: 1px solid #ddd;
+    text-align: left;
+    overflow: hidden; /* Ensures text overflow is handled properly */
+    white-space: nowrap; /* Prevents text from wrapping */
+    text-overflow: ellipsis; /* Adds ellipsis for overflow text */
+  }
+
+  th {
+    background-color: $primary-color;
+    color: white;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .column-date {
+    width: 25%; /* Adjust the width as needed */
+  }
+
+  .column-description {
+    width: 50%; /* Adjust the width as needed */
+  }
+
+  .column-amount {
+    width: 25%; /* Adjust the width as needed */
+  }
+}
+
+.filter-input {
+  padding: $spacing-unit;
+  border-radius: $border-radius;
+  border: 1px solid #ddd;
+  width: 100%;
+  margin-bottom: $spacing-unit * 2;
+}
+
+.total-expenses {
+  background-color: $secondary-color;
+  color: white;
+  padding: $spacing-unit;
+  border-radius: $border-radius;
+  text-align: center;
+  font-size: 1.5rem;
+}
